@@ -1,0 +1,10 @@
+version: "3"
+services:
+  nginx:
+    container_name: nginx_test
+    # build: .　#Dcokerfileを使う場合
+    image: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./html:/usr/share/nginx/html #右がnginxのデフォルトの公開ディレクトリ

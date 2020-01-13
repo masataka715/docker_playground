@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  php:
+    image: php:7.2-apache
+    container_name: php72-apache
+    volumes:
+      - ./php.ini:/usr/local/etc/php/php.ini #デフォルトで、docker内にはphp.iniがなかった
+      - ./html:/var/www/html
+    ports:
+      - 80:80
+  mysql:
+    image: mysql:5.7
+    container_name: mysql57
+    volumes:
+      - ./mysql:/var/lib/mysql #これで勝手に、ローカルにmysqlフォルダが作られた
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=test #最初に作られるデータベース名
+      - MYSQL_USER=test
+      - MYSQL_PASSWORD=test
