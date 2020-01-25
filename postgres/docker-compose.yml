@@ -1,0 +1,17 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:10-alpine
+    container_name: postgres10 
+    # デフォルトでも、postgresというデータベースとユーザーが作られる
+    environment:
+      - POSTGRES_USER=test01
+      - POSTGRES_PASSWORD=test01
+      - POSTGRES_DB=test01
+    # ホスト側(左側)は任意のディレクトリ
+    volumes:
+      - ./pgsql-data:/var/lib/postgresql/data # データ入りのイメージ作成では、ここを削除
+      - ./initdb:/docker-entrypoint-initdb.d #このフォルダ内にファイルを置いておくと起動時に実行してくれる
+    # ホスト側（左側）は任意のポート
+    ports:
+      - 5432:5432
