@@ -2,6 +2,7 @@
 <ul>
     <li>ubuntu</li>
     <li>Golang</li>
+    <li>Python</li>
     <li>Nginx</li>
     <li>PostgreSQL</li>
     <li>Redis</li>

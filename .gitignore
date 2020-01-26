@@ -3,3 +3,4 @@ lamp/mysql
 redis/data
 postgres/pgsql-data
 ubuntu/volumes
+python/volumes/site-packages
