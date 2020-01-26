@@ -2,3 +2,4 @@
 lamp/mysql
 redis/data
 postgres/pgsql-data
+ubuntu/volumes
