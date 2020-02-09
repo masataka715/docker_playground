@@ -1,0 +1,15 @@
+version: "3"
+services:
+  nginx:
+    container_name: centos_nginx
+    build: .
+    ports:
+      - "80:80"
+    # tty: true
+    privileged: true
+    volumes:
+      - ./html:/usr/share/nginx/html #右がnginxのデフォルトの公開ディレクトリ
+    # cap_add:
+    #   - SYS_ADMIN
+    # security_opt:
+    #   - seccomp:unconfined
